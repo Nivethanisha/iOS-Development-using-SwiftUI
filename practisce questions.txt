@@ -1,0 +1,71 @@
+//Check Whether Two Strings Are Anagrams
+let str1 = "listen"
+let str2 = "silent"
+
+if str1.sorted() == str2.sorted() {
+    print("Anagram")
+} else {
+    print("Not Anagram")
+}
+
+//Count Vowels in a String
+let word = "education"
+var count = 0
+
+for char in word.lowercased() {
+    if "aeiou".contains(char) {
+        count += 1
+    }
+}
+
+print("Vowels:", count)
+
+//Find the Largest Element in an Array
+let numbers = [12, 45, 23, 67, 34]
+
+var largest = numbers[0]
+
+for num in numbers {
+    if num > largest {
+        largest = num
+    }
+}
+
+print("Largest:", largest)
+
+//Find the Second Largest Element
+let numbers = [10, 20, 40, 30, 50]
+
+let uniqueNumbers = Array(Set(numbers))
+let sortedNumbers = uniqueNumbers.sorted()
+
+if sortedNumbers.count >= 2 {
+    print("Second Largest:", sortedNumbers[sortedNumbers.count - 2])
+}
+
+//Remove Duplicate Elements from an Array
+let numbers = [1, 2, 3, 2, 4, 1, 5]
+
+var result: [Int] = []
+
+for num in numbers {
+    if !result.contains(num) {
+        result.append(num)
+    }
+}
+
+print(result)
+
+//Find the Missing Number in an Array
+let numbers = [1, 2, 4, 5]
+
+let n = 5
+
+let total = n * (n + 1) / 2
+
+let actualSum = numbers.reduce(0, +)
+
+let missing = total - actualSum
+
+print("Missing Number:", missing)
+
