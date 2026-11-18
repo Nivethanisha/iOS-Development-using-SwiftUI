@@ -1,0 +1,60 @@
+//Sort an Array
+let numbers = [50, 10, 40, 20, 30]
+
+let sortedNumbers = numbers.sorted()
+
+print(sortedNumbers)
+
+
+//Find Frequency of Each Element
+let numbers = [1, 2, 2, 3, 3, 3, 4]
+
+var frequency: [Int: Int] = [:]
+
+for num in numbers {
+    frequency[num, default: 0] += 1
+}
+
+for key in frequency.keys.sorted() {
+    print("\(key): \(frequency[key]!)")
+}
+
+
+//Check Whether Two Strings Are Anagrams
+let str1 = "heart"
+let str2 = "earth"
+
+let result1 = str1.sorted()
+let result2 = str2.sorted()
+
+if result1 == result2 {
+    print("Anagram")
+} else {
+    print("Not Anagram")
+}
+
+
+//Find Duplicate Characters in a String
+let word = "programming"
+
+var frequency: [Character: Int] = [:]
+
+for char in word {
+    frequency[char, default: 0] += 1
+}
+
+for char in word {
+    if frequency[char] == 2 {
+        print(char)
+        frequency[char] = 0
+    }
+}
+
+
+//Find Common Elements in Two Arrays
+let array1 = [1, 2, 3, 4, 5]
+let array2 = [3, 4, 5, 6, 7]
+
+let common = array1.filter { array2.contains($0) }
+
+print(common)
