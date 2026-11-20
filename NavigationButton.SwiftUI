@@ -1,0 +1,20 @@
+import SwiftUI
+struct ContentView:View{
+    @State var name =""
+    var body:some View{ 
+        NavigationStack{
+            VStack{
+                Text("My profile")
+                NavigationLink("View my profile"){
+                    VStack{
+                        Text("I am nivetha")
+                        Text("i have some health issues")
+                        Text("i am well now")
+                    }
+
+                }
+            }
+        }
+
+    }
+}
