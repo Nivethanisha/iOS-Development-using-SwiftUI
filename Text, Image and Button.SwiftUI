@@ -1,0 +1,43 @@
+
+import SwiftUI
+
+struct ContentView: View {
+
+    var body: some View {
+
+        VStack(spacing: 20) {
+
+            Image(systemName: "person.circle.fill")
+                .resizable()
+                .frame(width: 120, height: 120)
+                .foregroundColor(.blue)
+
+            Text("Nivetha")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+
+            Text("Computer Science Engineering")
+                .font(.headline)
+                .foregroundColor(.gray)
+
+            Text("Learning Swift and SwiftUI")
+                .font(.body)
+
+            Button("Edit Profile") {
+
+                print("Edit Profile Clicked")
+
+            }
+            .padding()
+            .background(Color.blue)
+            .foregroundColor(.white)
+            .cornerRadius(10)
+
+        }
+        .padding()
+    }
+}
+
+#Preview {
+    ContentView()
+}
