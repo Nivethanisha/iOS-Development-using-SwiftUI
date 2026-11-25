@@ -1,0 +1,24 @@
+//VStack
+
+import SwiftUI
+
+struct ContentView: View {
+
+    var body: some View {
+
+        VStack {
+
+            Text("Apple")
+            Text("Orange")
+            Text("Mango")
+
+        }
+    }
+}
+
+#Preview {
+    ContentView()
+}
+
+
+
