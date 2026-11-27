@@ -1,0 +1,105 @@
+
+import SwiftUI
+
+struct ContentView: View {
+
+    
+    @State private var email = ""
+    @State private var password = ""
+
+  
+    @State private var message = ""
+
+    var body: some View {
+
+        ZStack {
+
+            Color.blue.opacity(0.1)
+                .ignoresSafeArea()
+
+            VStack(spacing: 25) {
+
+                Text("Welcome Back!")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundColor(.blue)
+
+                Image(systemName: "person.circle.fill")
+                    .font(.system(size: 90))
+                    .foregroundColor(.blue)
+
+                VStack(alignment: .leading, spacing: 15) {
+
+                    
+                    Text("Email Address")
+                        .font(.headline)
+
+                    TextField("Enter your email", text: $email)
+                        .keyboardType(.emailAddress)
+                        .textInputAutocapitalization(.never)
+                        .autocorrectionDisabled()
+                        .padding()
+                        .background(Color.gray.opacity(0.15))
+                        .cornerRadius(12)
+
+                    // Password Field
+                    Text("Password")
+                        .font(.headline)
+
+                    SecureField("Enter your password", text: $password)
+                        .padding()
+                        .background(Color.gray.opacity(0.15))
+                        .cornerRadius(12)
+
+                }
+
+                
+                Button(action: {
+
+                    if email.isEmpty || password.isEmpty {
+
+                        message = "Please enter all details"
+
+                    } else if !email.contains("@") {
+
+                        message = "Please enter a valid email"
+
+                    } else if password.count < 6 {
+
+                        message = "Password must contain at least 6 characters"
+
+                    } else {
+
+                        message = "Login Successful!"
+
+                    }
+
+                }) {
+
+                    Text("Login")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.blue)
+                        .cornerRadius(15)
+
+                }
+
+                                Text(message)
+                    .font(.subheadline)
+                    .foregroundColor(.blue)
+
+            }
+            .padding(25)
+            .background(Color.white)
+            .cornerRadius(25)
+            .padding()
+
+        }
+    }
+}
+
+#Preview {
+    ContentView()
+}
