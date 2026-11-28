@@ -1,0 +1,27 @@
+import SwiftUI
+
+struct ContentView: View {
+
+    @State private var username = ""
+
+    var body: some View {
+        VStack(spacing: 20) {
+
+            TextField("Enter your name", text: $username)
+                .textFieldStyle(.roundedBorder)
+
+            WelcomeView(name: $username)
+        }
+        .padding()
+    }
+}
+
+struct WelcomeView: View {
+
+    @Binding var name: String
+
+    var body: some View {
+        Text("Welcome, \(name)")
+            .font(.title)
+    }
+}
